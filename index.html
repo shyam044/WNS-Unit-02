@@ -1,0 +1,761 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>WNS Unit-02 - Question-01</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f9f9f9;
+      color: #333;
+      font-size: 1rem;
+    }
+
+    header {
+      background-color: #0077cc;
+      color: white;
+      padding: 1rem 0.5rem;
+      text-align: center;
+      font-size: 1.5rem;
+      font-weight: bold;
+      letter-spacing: 1px;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 2rem auto;
+      padding: 1rem;
+      background: white;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+      page-break-after: always;
+    }
+
+    h2 {
+      color: #0077cc;
+      margin: 2rem 0 1rem;
+      font-size: 1.6rem;
+    }
+
+    h3 {
+      color: #444;
+      margin-top: 0.8rem;
+      margin-bottom: 0.5rem;
+      font-size: 1.3rem;
+    }
+
+    p {
+      margin: 0.5rem 0;
+    }
+
+    ul {
+      margin: 0.3rem 0 1rem 1rem;
+      padding-left: 1rem;
+    }
+
+    li>ul {
+      margin-top: 0.3rem;
+      margin-bottom: 0.6rem;
+      padding-left: 0.7rem;
+    }
+
+    li>ul>li {
+      margin-bottom: 0.4rem;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+      height: auto;
+      margin: 1rem auto;
+      border-radius: 6px;
+    }
+
+    @media (max-width: 768px) {
+      body {
+        font-size: 0.95rem;
+      }
+
+      header {
+        font-size: 1.3rem;
+        padding: 0.8rem 0.5rem;
+      }
+
+      .container {
+        padding: 0.9rem;
+        margin: 1.5rem auto;
+      }
+
+      h2 {
+        font-size: 1.3rem;
+        margin-top: 1.8rem;
+      }
+
+      h3 {
+        font-size: 1.1rem;
+        margin-top: 0.7rem;
+      }
+
+      ul {
+        margin-left: 0.5rem;
+        padding-left: 0.7rem;
+      }
+
+      li>ul {
+        margin-top: 0.2rem;
+        margin-bottom: 0.4rem;
+        padding-left: 0.5rem;
+      }
+
+      li>ul>li {
+        margin-bottom: 0.3rem;
+      }
+
+      ul li {
+        font-size: 0.95rem;
+        line-height: 1.3rem;
+      }
+    }
+
+    @media print {
+      .container {
+        page-break-after: always;
+      }
+    }
+     table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  th, td {
+    border: 1px solid #ddd;
+    padding: 0.8rem;
+    text-align: left;
+  }
+
+  th {
+    background-color: #0077cc;
+    color: white;
+    font-weight: bold;
+  }
+
+  tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+
+  tr:hover {
+    background-color: #e6f0ff;
+  }
+
+  @media (max-width: 768px) {
+    table, thead, tbody, th, td, tr {
+      display: block;
+    }
+
+    thead tr {
+      display: none;
+    }
+
+    tr {
+      margin-bottom: 1rem;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      padding: 0.5rem;
+    }
+
+    td {
+      border: none;
+      padding: 0.5rem;
+      position: relative;
+      text-align: right;
+    }
+
+    td::before {
+      content: attr(data-label);
+      position: absolute;
+      left: 0.5rem;
+      width: 50%;
+      font-weight: bold;
+      text-align: left;
+    }
+  }
+  </style>
+</head>
+
+
+<body>
+
+
+  <header>
+    WNS Unit-02
+  </header>
+
+
+  <div class="container">
+    <h2>1)Describe the process of establishing a secure SSH connection for terminal access and file transfer over wireless networks.</h2>
+    <p>Connect TCP to SSH server:</p>
+    <ul>
+      <li>SSH command is connected to the server over the internet by using port 22.</li>
+    </ul>
+
+    <p>SSH Handshake:</p>
+    <ul>
+      <li>When the connection starts, the client & server exchange public keys, i.e. it performs an SSH handshake.</li>
+    </ul>
+    <img src="WhatsApp Image 2025-11-11 at 16.10.40_0373c321.jpg"/>
+    <p>Prevent Man-in-the-Middle Attack:</p>
+    <ul>
+      <li>SSH client checks the server's identity to prevent the Man-in-the-Middle Attack.</li>
+    </ul>
+
+    <p>Authentication:</p>
+    <ul>
+      <li>Once the secure connection is finished, the client logs in to the servers.</li>
+      <li>There are two methods:</li>
+      <ul>
+        <li>a) Password Authentication</li>
+        <li>b) Public-Key Authentication</li>
+      </ul>
+      <li>Public-Key authentication is more secure when compared to password authentication.</li>
+    </ul>
+
+    <p>Secure command-line shell:</p>
+    <ul>
+      <li>After logging in, the user gets access to a secure command-line shell.</li>
+      <li>Here, attackers cannot easily launch an attack on a system.</li>
+    </ul>
+
+    <p>SCP and SFTP:</p>
+    <ul>
+      <li>SCP and SFTP are the tools used to transfer files safely.</li>
+    </ul>
+
+  </div>
+
+  
+  <header>
+    WNS Unit-02
+  </header>
+
+  
+  <div class="container">
+  <h2>2) Importance of SSH Protocol:</h2>
+
+  <h3>1) Replacing Insecure Protocols:</h3>
+  <ul>
+    <li>The Insecure Protocols transmit the data in plain text, which makes attackers easily launch attacks on the system.</li>
+    <li>The SSH Protocol was developed to replace these Insecure Protocols.</li>
+  </ul>
+
+  <h3>2) Replacing Insecure File Transfer Protocol:</h3>
+  <ul>
+    <li>The SSH Protocol was developed to replace the Insecure File Transfer Protocols.</li>
+    <li>It ensures Encryption and Authentication during File Transfer.</li>
+  </ul>
+
+  <h3>3) Encryption:</h3>
+  <ul>
+    <li>The process of transmitting the data from plaintext to ciphertext is called Encryption.</li>
+    <li>SSH protocol provides strong Encryption.</li>
+  </ul>
+
+  <h3>4) Authentication:</h3>
+  <ul>
+    <li>Authentication is used to verify the identity of a user or device.</li>
+    <li>There are mainly two types of Authentication:</li>
+    <ul>
+      <li>a) Peer-Entity Authentication</li>
+      <li>b) Data-Origin Authentication</li>
+    </ul>
+    <li>SSH Protocol provides strong Authentication.</li>
+  </ul>
+
+  <h3>5) Security:</h3>
+  <ul>
+    <li>SSH Protocol provides security and prevents common attacks like:</li>
+    <ul>
+      <li>DNS spoofing</li>
+      <li>IP spoofing</li>
+      <li>Man In The Middle Attack</li>
+    </ul>
+  </ul>
+</div>
+
+  <header>
+    WNS Unit-02
+  </header>
+
+
+<div class="container">
+  <h2>3) IPsec, SSL, TLS</h2>
+
+  <table style="width:100%; border-collapse: collapse; margin-top: 1rem; font-size: 1rem;">
+    <thead style="background-color: #0077cc; color: white;">
+      <tr>
+        <th style="border: 1px solid #ddd; padding: 10px; text-align: left;">Protocol</th>
+        <th style="border: 1px solid #ddd; padding: 10px; text-align: left;">Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="border: 1px solid #ddd; padding: 10px; font-weight: bold;">IPsec</td>
+        <td style="border: 1px solid #ddd; padding: 10px;">
+          <ul>
+            <li>IPsec stands for Internet Protocol Security</li>
+            <li>IPsec is in the Network Layer (Layer-3)</li>
+            <li>IPsec is very complex</li>
+            <li>IPsec may cause overhead</li>
+            <li>IPsec works with IP Protocols</li>
+            <li>IPsec uses X.509 certificate</li>
+          </ul>
+        </td>
+      </tr>
+
+      <tr style="background-color: #f9f9f9;">
+        <td style="border: 1px solid #ddd; padding: 10px; font-weight: bold;">SSL</td>
+        <td style="border: 1px solid #ddd; padding: 10px;">
+          <ul>
+            <li>SSL stands for Secure Socket Layer</li>
+            <li>SSL lies between the Transport Layer (Layer-4) and the Application Layer (Layer-1)</li>
+            <li>SSL is very simple</li>
+            <li>SSL has lower overhead</li>
+            <li>SSL works with TCP Protocols</li>
+            <li>SSL uses X.509 certificate, where the client side is optional</li>
+          </ul>
+        </td>
+      </tr>
+
+      <tr>
+        <td style="border: 1px solid #ddd; padding: 10px; font-weight: bold;">TLS</td>
+        <td style="border: 1px solid #ddd; padding: 10px;">
+          <ul>
+            <li>TLS stands for Transport Layer Security</li>
+            <li>TLS is in the Transport Layer (Layer-4)</li>
+            <li>TLS is very simple</li>
+            <li>TLS has lower overhead</li>
+            <li>TLS works only with TCP Protocols</li>
+            <li>TLS uses X.509 certificate, where the client side is optional</li>
+          </ul>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+<img src="WhatsApp Image 2025-11-11 at 17.01.26_d2cd5f14.jpg"/>
+</div>
+
+  <header>
+    WNS Unit-02
+  </header>
+
+<div class="container">
+  <h2>4) Architecture of IPsec:</h2>
+<img src="11111.jpg"/>
+  <p>IPsec uses two protocols. They are:</p>
+  <ul>
+    <li>a) ESP Protocol</li>
+    <li>b) AH Protocol</li>
+  </ul>
+
+  <h3>a) ESP Protocol:</h3>
+  <ul>
+    <li>ESP stands for Encapsulating Security Payload</li>
+    <li>ESP Protocol uses an Encryption Algorithm and may also use an Authentication Algorithm</li>
+  </ul>
+
+  <h3>b) AH Protocol:</h3>
+  <ul>
+    <li>AH stands for Authentication Header</li>
+    <li>AH Protocol do not use an Encryption Algorithm and uses an Authentication Algorithm to verify the identity of a user or device</li>
+  </ul>
+
+  <h3>Encryption Algorithm:</h3>
+  <ul>
+    <li>The Process of transmitting the data from plaintext to ciphertext by using a cryptographic Algorithm is called as Encryption Algorithm</li>
+    <li>Encryption Algorithm is used to encrypt the data</li>
+  </ul>
+
+  <h3>Authentication Algorithm:</h3>
+  <ul>
+    <li>The Process of verifying the identity of a user or device is called as Authentication Algorithm</li>
+    <li>Authentication Algorithm is used to authenticate the data</li>
+  </ul>
+
+  <h3>DOI:</h3>
+  <ul>
+    <li>DOI stands for Domain of Interpretation</li>
+    <li>DOI is an identifier that supports both ESP Protocol and AH Protocol</li>
+  </ul>
+
+  <h3>Key Management:</h3>
+  <ul>
+    <li>Key Management describes how the keys are exchanged between the sender and the receiver</li>
+  </ul>
+</div>
+  <header>
+    WNS Unit-02
+  </header>
+<div class="container">
+  <h2>5) Wireless Transport Layer Security (WTLS):</h2>
+
+  <ul>
+    <li>WTLS stands for Wireless Transport Layer Security</li>
+    <li>WTLS is a security Protocol specially designed for the Wireless Application Protocol (WAP)</li>
+    <li>WTLS provides:
+      <ul>
+        <li>Data Integrity</li>
+        <li>Authentication</li>
+        <li>Encryption</li>
+      </ul>
+    </li>
+  </ul>
+
+  <h3>SSL/TLS vs WTLS:</h3>
+  <ul>
+    <li>SSL/TLS uses the TCP Protocol, which provides connection-oriented services</li>
+    <li>WTLS uses the UDP Protocol, which provides connectionless services</li>
+    <img src="WhatsApp Image 2025-11-11 at 17.34.17_027c3e86.jpg"/>
+  </ul>
+
+  <h3>Operations of WTLS:</h3>
+
+  <h4>Handshake process:</h4>
+  <ul>
+    <li>The Client initiates the handshake with the Server via WAP Gateway</li>
+    <li>There are three classes:
+      <ul>
+        <li>WTLS class 1 - No certificates are used</li>
+        <li>WTLS class 2 - Only Server Certificates are used</li>
+        <li>WTLS class 3 - Both Client and Server certificates are used</li>
+      </ul>
+    </li>
+  </ul>
+
+  <h4>Encryption Algorithm:</h4>
+  <ul>
+    <li>The Process of transmitting the data from plaintext to ciphertext by using a cryptographic Algorithm is called as Encryption Algorithm</li>
+    <li>Encryption Algorithm is used to encrypt the data</li>
+  </ul>
+
+  <h4>Authentication Algorithm:</h4>
+  <ul>
+    <li>The Process of verifying the identity of a user or device is called as Authentication Algorithm</li>
+    <li>Authentication Algorithm is used to authenticate the data</li>
+  </ul>
+
+  <h4>Key Management:</h4>
+  <ul>
+    <li>Key Management describes how the keys are exchanged between the sender and the receiver</li>
+  </ul>
+</div>
+
+<header>
+  WNS Unit-02
+</header>
+
+<div class="container">
+  <h2>6) OSI Layer:</h2>
+
+  <p>OSI stands for Open System Interconnection</p>
+  <p>The OSI Model consists of 7 Layers:</p>
+  <ul>
+    <li>Physical Layer</li>
+    <li>Data Link Layer</li>
+    <li>Network Layer</li>
+    <li>Transport Layer</li>
+    <li>Session Layer</li>
+    <li>Presentation Layer</li>
+    <li>Application Layer</li>
+  </ul>
+    <img src="OSI-vs-TCP-vs-Hybrid-2.webp"/>
+
+  <h3>i) Physical Layer:</h3>
+  <ul>
+    <li>Physical Layer is Layer 1 in the OSI Model</li>
+    <li>It is responsible for the physical connection between the devices.</li>
+  </ul>
+
+  <h3>ii) Data Link Layer:</h3>
+  <ul>
+    <li>Data Link Layer is Layer 2 in the OSI Model</li>
+    <li>It is responsible for the node-to-node transmission of data</li>
+  </ul>
+
+  <h3>iii) Network Layer:</h3>
+  <ul>
+    <li>Network Layer is Layer 3 in the OSI Model</li>
+    <li>It is responsible for the host-to-host transmission of data</li>
+  </ul>
+
+  <h3>iv) Transport Layer:</h3>
+  <ul>
+    <li>Transport Layer is Layer 4 in the OSI Model</li>
+    <li>It is responsible for the end-to-end transmission of data</li>
+  </ul>
+
+  <h3>v) Session Layer:</h3>
+  <ul>
+    <li>Session Layer is Layer 5 in the OSI Model</li>
+    <li>It is responsible for establishing, managing and terminating the sessions</li>
+  </ul>
+
+  <h3>vi) Presentation Layer:</h3>
+  <ul>
+    <li>Presentation Layer is Layer 6 in the OSI Model</li>
+    <li>Presentation Layer is also called as Transition Layer</li>
+  </ul>
+
+  <h3>vii) Application Layer:</h3>
+  <ul>
+    <li>Application Layer is Layer 7 in the OSI Model</li>
+    <li>Application creates the data</li>
+  </ul>
+</div>
+<header>
+  WNS Unit-02
+</header>
+
+<div class="container">
+  <h2>7) Data Link Layer:</h2>
+
+  <ul>
+    <li>Data Link Layer is Layer 2 in the OSI Model</li>
+    <li>It is responsible for the node-to-node transmission of data</li>
+    <li>The Data Link Layer is divided into two sub-layers:
+      <ul>
+        <li>a) Logical Link Control (LLC)</li>
+        <li>b) Media Access Control (MAC)</li>
+      </ul>
+    </li>
+    <img src="0ULQ3cAMiVcTcpUpTVa6vA_b.webp"/>
+  </ul>
+
+  <h3>a) Logical Link Control (LLC):</h3>
+  <ul>
+    <li>LLC stands for Logical Link Control</li>
+    <li>Logical Link Control is the upper part of the Data Link Layer</li>
+    <li>Functions of LLC:
+      <ul>
+        <li>i) Frame Synchronization:
+          <ul>
+            <li>LLC manages the Frame Structure and provides proper synchronization between sender and receiver</li>
+          </ul>
+        </li>
+        <li>ii) Connection Management:
+          <ul>
+            <li>Responsible for establishing the connection between devices</li>
+          </ul>
+        </li>
+        <li>iii) Flow Control:
+          <ul>
+            <li>It stops the sender, who is sending data quickly</li>
+            <li>It ensures that the receiver does not get more data</li>
+          </ul>
+        </li>
+        <li>iv) Error Control:
+          <ul>
+            <li>Error control detects and corrects the errors</li>
+            <li>Types of Errors:
+              <ul>
+                <li>Single-bit error</li>
+                <li>Burst error</li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+
+  <h3>b) Media Access Control (MAC):</h3>
+  <ul>
+    <li>MAC stands for Media Access Control</li>
+    <li>Media Access Control is the lower part of the Data Link Layer</li>
+    <li>Functions of MAC:
+      <ul>
+        <li>i) Frame Detection:
+          <ul>
+            <li>Frame Detection defines the frame boundaries</li>
+          </ul>
+        </li>
+        <li>ii) Physical Addressing:
+          <ul>
+            <li>Adds the Source and Destination MAC addresses to the frames</li>
+          </ul>
+        </li>
+        <li>iii) Access Control:
+          <ul>
+            <li>It prevents collisions when multiple devices send data at the same time</li>
+            <li>Example:
+              <ul>
+                <li>CSMA/CD</li>
+                <li>CSMA/CA</li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li>iv) Error Checking:
+          <ul>
+            <li>It checks the errors by using CRC</li>
+            <li>CRC stands for Cyclic Redundancy Check</li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+<header>
+  WNS Unit-02
+</header>
+<div class="container">
+  <h2>8) Connection-Oriented Service VS Connectionless Service</h2>
+  <p>Data Link Layer and Transport Layer can provide communication in two modes:</p>
+  <ul>
+    <li>i) Connection-Oriented Service</li>
+    <li>ii) Connectionless Service</li>
+  </ul>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Connection-Oriented Service</th>
+        <th>Connectionless Service</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Connection is required between sender and receiver before the data transmission</td>
+        <td>Connection is not required between sender and receiver before the data transmission</td>
+      </tr>
+      <tr>
+        <td>Packets follow the same route</td>
+        <td>Packets do not follow the same route</td>
+      </tr>
+      <tr>
+        <td>Feasible and reliable</td>
+        <td>Not feasible and unreliable</td>
+      </tr>
+      <tr>
+        <td>Less scalable and high overhead</td>
+        <td>Highly scalable and low overhead</td>
+      </tr>
+      <tr>
+        <td>Handles errors</td>
+        <td>Does not handle errors</td>
+      </tr>
+      <tr>
+        <td><strong>Example: </strong>TCP (Transmission Control Protocol)</td>
+        <td><strong>Example: </strong>UDP (User Datagram Protocol)</td>
+      </tr>
+      <tr>
+        <td><img src="frame_3168.webp"/></td>
+        <td><img src="frame_3169.webp"/></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<div class="container">
+  <h2>9)Cryptographic Framework:</h2>
+<img src="WhatsApp Image 2025-11-11 at 18.38.14_1c322e81.jpg"/>
+  <h3>i) Authentication:</h3>
+  <ul>
+    <li>The Process of verifying the identity of user or device is called as Authentication</li>
+    <li>Authentication Algorithm is used to authenticate the data</li>
+    <li>Types of Authentication:</li>
+    <ul>
+      <li>There are mainly two types of Authentication:</li>
+      <ul>
+        <li>a) Peer Entity Authentication</li>
+        <li>b) Data-Origin Authentication</li>
+      </ul>
+    </ul>
+  </ul>
+
+  <h3>ii) Confidentiality:</h3>
+  <ul>
+    <li>Confidentiality ensures that hiding the information from unauthorized access during exchange</li>
+  </ul>
+
+  <h3>iii) Data Integrity:</h3>
+  <ul>
+    <li>Data Integrity prevents the unauthorized modifications to the Information</li>
+    <li>Data Integrity also detects the modification made</li>
+  </ul>
+
+  <h3>iv) Non-Repudiation:</h3>
+  <ul>
+    <li>Non-Repudiation prevents the denial of message transmission between Sender and Receiver</li>
+  </ul>
+
+  <h2>Framework Structure for IoT Security:</h2>
+
+  <h3>i) Device-Level Security:</h3>
+  <ul>
+    <li>IoT devices use symmetric key cryptography for fast and lightweight encryption.</li>
+    <li>Symmetric key cryptography like:</li>
+    <ul>
+      <li>AES Algorithm</li>
+      <li>DES Algorithm</li>
+    </ul>
+  </ul>
+
+  <h3>ii) Network Level Security:</h3>
+  <ul>
+    <li>IoT devices use secure protocols to protect data during wireless transmission.</li>
+    <li>Secure protocols like:</li>
+    <ul>
+      <li>SSL/TLS</li>
+      <li>WTSL</li>
+      <li>IPsec</li>
+    </ul>
+  </ul>
+
+  <h3>iii) Application Level Security:</h3>
+  <ul>
+    <li>It encrypts application data and ensures secure API access.</li>
+  </ul>
+</div>
+
+<div class="container">
+  <h2>10) Unicast Key and Multicast Key:</h2>
+
+  <h3>i) Unicast Key:</h3>
+  <ul>
+    <li>An encryption key used between one transmitter and one receiver</li>
+    <li>It secures the communication between two devices</li>
+    <li>Unicast Key is very simple because only two devices manage the key</li>
+    <li>Valid only during the session</li>
+    <li>Example:</li>
+    <ul>
+      <li>Laptop connecting to a WiFi Network</li>
+    </ul>
+  </ul>
+
+  <h3>ii) Multicast Key:</h3>
+  <ul>
+    <li>An encryption key used between one transmitter and multiple receivers</li>
+    <li>It secures the group communication like broadcasts, video streaming</li>
+    <li>Multicast Key is very complex because the key is shared across multiple devices</li>
+    <li>Valid as long as group is changed</li>
+    <li>Example:</li>
+    <ul>
+      <li>Manager sharing his presentation to all his employees</li>
+    </ul>
+    <img src="unicast-multicast-broadcast_thumbnail.webp"/>
+  </ul>
+</div>
+
+
+
+</body>
+
+</html>
