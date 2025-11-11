@@ -307,48 +307,48 @@
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <td style="border: 1px solid #ddd; padding: 10px; font-weight: bold;">IPsec</td>
-        <td style="border: 1px solid #ddd; padding: 10px;">
-          <ul>
-            <li>IPsec stands for Internet Protocol Security</li>
-            <li>IPsec is in the Network Layer (Layer-3)</li>
-            <li>IPsec is very complex</li>
-            <li>IPsec may cause overhead</li>
-            <li>IPsec works with IP Protocols</li>
-            <li>IPsec uses X.509 certificate</li>
-          </ul>
-        </td>
-      </tr>
+  <tr>
+    <td data-label="Protocol" style="border: 1px solid #ddd; padding: 10px; font-weight: bold;">IPsec</td>
+    <td data-label="Description" style="border: 1px solid #ddd; padding: 10px;">
+      <ul>
+        <li>IPsec stands for Internet Protocol Security</li>
+        <li>IPsec is in the Network Layer (Layer-3)</li>
+        <li>IPsec is very complex</li>
+        <li>IPsec may cause overhead</li>
+        <li>IPsec works with IP Protocols</li>
+        <li>IPsec uses X.509 certificate</li>
+      </ul>
+    </td>
+  </tr>
 
-      <tr style="background-color: #f9f9f9;">
-        <td style="border: 1px solid #ddd; padding: 10px; font-weight: bold;">SSL</td>
-        <td style="border: 1px solid #ddd; padding: 10px;">
-          <ul>
-            <li>SSL stands for Secure Socket Layer</li>
-            <li>SSL lies between the Transport Layer (Layer-4) and the Application Layer (Layer-1)</li>
-            <li>SSL is very simple</li>
-            <li>SSL has lower overhead</li>
-            <li>SSL works with TCP Protocols</li>
-            <li>SSL uses X.509 certificate, where the client side is optional</li>
-          </ul>
-        </td>
-      </tr>
+  <tr style="background-color: #f9f9f9;">
+    <td data-label="Protocol" style="border: 1px solid #ddd; padding: 10px; font-weight: bold;">SSL</td>
+    <td data-label="Description" style="border: 1px solid #ddd; padding: 10px;">
+      <ul>
+        <li>SSL stands for Secure Socket Layer</li>
+        <li>SSL lies between the Transport Layer (Layer-4) and the Application Layer (Layer-1)</li>
+        <li>SSL is very simple</li>
+        <li>SSL has lower overhead</li>
+        <li>SSL works with TCP Protocols</li>
+        <li>SSL uses X.509 certificate, where the client side is optional</li>
+      </ul>
+    </td>
+  </tr>
 
-      <tr>
-        <td style="border: 1px solid #ddd; padding: 10px; font-weight: bold;">TLS</td>
-        <td style="border: 1px solid #ddd; padding: 10px;">
-          <ul>
-            <li>TLS stands for Transport Layer Security</li>
-            <li>TLS is in the Transport Layer (Layer-4)</li>
-            <li>TLS is very simple</li>
-            <li>TLS has lower overhead</li>
-            <li>TLS works only with TCP Protocols</li>
-            <li>TLS uses X.509 certificate, where the client side is optional</li>
-          </ul>
-        </td>
-      </tr>
-    </tbody>
+  <tr>
+    <td data-label="Protocol" style="border: 1px solid #ddd; padding: 10px; font-weight: bold;">TLS</td>
+    <td data-label="Description" style="border: 1px solid #ddd; padding: 10px;">
+      <ul>
+        <li>TLS stands for Transport Layer Security</li>
+        <li>TLS is in the Transport Layer (Layer-4)</li>
+        <li>TLS is very simple</li>
+        <li>TLS has lower overhead</li>
+        <li>TLS works only with TCP Protocols</li>
+        <li>TLS uses X.509 certificate, where the client side is optional</li>
+      </ul>
+    </td>
+  </tr>
+</tbody>
   </table>
 <img src="WhatsApp Image 2025-11-11 at 17.01.26_d2cd5f14.jpg"/>
 </div>
@@ -631,36 +631,44 @@
         <th>Connectionless Service</th>
       </tr>
     </thead>
-    <tbody>
-      <tr>
-        <td>Connection is required between sender and receiver before the data transmission</td>
-        <td>Connection is not required between sender and receiver before the data transmission</td>
-      </tr>
-      <tr>
-        <td>Packets follow the same route</td>
-        <td>Packets do not follow the same route</td>
-      </tr>
-      <tr>
-        <td>Feasible and reliable</td>
-        <td>Not feasible and unreliable</td>
-      </tr>
-      <tr>
-        <td>Less scalable and high overhead</td>
-        <td>Highly scalable and low overhead</td>
-      </tr>
-      <tr>
-        <td>Handles errors</td>
-        <td>Does not handle errors</td>
-      </tr>
-      <tr>
-        <td><strong>Example: </strong>TCP (Transmission Control Protocol)</td>
-        <td><strong>Example: </strong>UDP (User Datagram Protocol)</td>
-      </tr>
-      <tr>
-        <td><img src="frame_3168.webp"/></td>
-        <td><img src="frame_3169.webp"/></td>
-      </tr>
-    </tbody>
+   <tbody>
+  <tr>
+    <td data-label="Connection-Oriented Service">Connection is required between sender and receiver before the data transmission</td>
+    <td data-label="Connectionless Service">Connection is not required between sender and receiver before the data transmission</td>
+  </tr>
+  <tr>
+    <td data-label="Connection-Oriented Service">Packets follow the same route</td>
+    <td data-label="Connectionless Service">Packets do not follow the same route</td>
+  </tr>
+  <tr>
+    <td data-label="Connection-Oriented Service">Feasible and reliable</td>
+    <td data-label="Connectionless Service">Not feasible and unreliable</td>
+  </tr>
+  <tr>
+    <td data-label="Connection-Oriented Service">Less scalable and high overhead</td>
+    <td data-label="Connectionless Service">Highly scalable and low overhead</td>
+  </tr>
+  <tr>
+    <td data-label="Connection-Oriented Service">Handles errors</td>
+    <td data-label="Connectionless Service">Does not handle errors</td>
+  </tr>
+  <tr>
+    <td data-label="Connection-Oriented Service"><strong>Example: </strong>TCP (Transmission Control Protocol)</td>
+    <td data-label="Connectionless Service"><strong>Example: </strong>UDP (User Datagram Protocol)</td>
+  </tr>
+  <tr>
+    <td data-label="Connection-Oriented Service">
+      <div class="mobile-img-container">
+        <img src="frame_3168.webp" alt="Connection-Oriented Service Image" style="width:100%; max-width:100px; height:auto; display:block; margin:0 auto;" />
+      </div>
+    </td>
+    <td data-label="Connectionless Service">
+      <div class="mobile-img-container">
+        <img src="frame_3169.webp" alt="Connectionless Service Image" style="width:100%; max-width:100px; height:auto; display:block; margin:0 auto;" />
+      </div>
+    </td>
+  </tr>
+</tbody>
   </table>
 </div>
 <div class="container">
@@ -759,3 +767,11 @@
 </body>
 
 </html>
+
+
+
+
+</body>
+
+</html>
+
