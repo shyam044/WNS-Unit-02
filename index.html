@@ -5,7 +5,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>WNS Unit-02 - Question-01</title>
+  <title>WNS Unit-02 - Question-01 (Responsive)</title>
   <style>
     * {
       box-sizing: border-box;
@@ -18,6 +18,7 @@
       background: #f9f9f9;
       color: #333;
       font-size: 1rem;
+      line-height: 1.45;
     }
 
     header {
@@ -79,6 +80,51 @@
       border-radius: 6px;
     }
 
+    /* Table base styles */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 1rem;
+      margin-bottom: 1rem;
+      font-size: 1rem;
+      background: transparent;
+    }
+
+    th,
+    td {
+      border: 1px solid #ddd;
+      padding: 0.8rem;
+      text-align: left;
+      vertical-align: top;
+    }
+
+    th {
+      background-color: #0077cc;
+      color: white;
+      font-weight: bold;
+    }
+
+    tr:nth-child(even) {
+      background-color: #f2f2f2;
+    }
+
+    tr:hover {
+      background-color: #e6f0ff;
+    }
+
+    /* Make tables horizontally scrollable on small screens instead of restructuring into blocks.
+       This preserves semantics and improves readability. */
+    .table-responsive {
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      width: 100%;
+    }
+
+    /* optional minimum width so complex tables remain readable on desktop and can scroll on mobile */
+    .table-responsive table {
+      min-width: 640px; /* adjust as needed */
+    }
+
     @media (max-width: 768px) {
       body {
         font-size: 0.95rem;
@@ -123,6 +169,27 @@
         font-size: 0.95rem;
         line-height: 1.3rem;
       }
+
+      /* Make images slightly smaller on very small screens */
+      img {
+        max-width: 100%;
+        height: auto;
+      }
+
+      /* Reduce padding in tables to fit more content without breaking layout */
+      th,
+      td {
+        padding: 0.6rem;
+      }
+
+      /* Ensure the responsive wrapper works well on narrow viewports */
+      .table-responsive table {
+        min-width: 520px;
+      }
+
+      .table-responsive {
+        margin-bottom: 1rem;
+      }
     }
 
     @media print {
@@ -130,65 +197,14 @@
         page-break-after: always;
       }
     }
-     table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 1rem;
-    margin-bottom: 1rem;
-  }
 
-  th, td {
-    border: 1px solid #ddd;
-    padding: 0.8rem;
-    text-align: left;
-  }
-
-  th {
-    background-color: #0077cc;
-    color: white;
-    font-weight: bold;
-  }
-
-  tr:nth-child(even) {
-    background-color: #f2f2f2;
-  }
-
-  tr:hover {
-    background-color: #e6f0ff;
-  }
-
-  @media (max-width: 768px) {
-    table, thead, tbody, th, td, tr {
-      display: block;
+    /* Accessibility: make focus visible for keyboard users */
+    a:focus,
+    button:focus,
+    input:focus {
+      outline: 3px solid rgba(0, 119, 204, 0.35);
+      outline-offset: 2px;
     }
-
-    thead tr {
-      display: none;
-    }
-
-    tr {
-      margin-bottom: 1rem;
-      border: 1px solid #ddd;
-      border-radius: 6px;
-      padding: 0.5rem;
-    }
-
-    td {
-      border: none;
-      padding: 0.5rem;
-      position: relative;
-      text-align: right;
-    }
-
-    td::before {
-      content: attr(data-label);
-      position: absolute;
-      left: 0.5rem;
-      width: 50%;
-      font-weight: bold;
-      text-align: left;
-    }
-  }
   </style>
 </head>
 
@@ -212,7 +228,7 @@
     <ul>
       <li>When the connection starts, the client & server exchange public keys, i.e. it performs an SSH handshake.</li>
     </ul>
-    <img src="WhatsApp Image 2025-11-11 at 16.10.40_0373c321.jpg"/>
+    <img src="WhatsApp Image 2025-11-11 at 16.10.40_0373c321.jpg" alt="SSH handshake diagram"/>
     <p>Prevent Man-in-the-Middle Attack:</p>
     <ul>
       <li>SSH client checks the server's identity to prevent the Man-in-the-Middle Attack.</li>
@@ -299,58 +315,61 @@
 <div class="container">
   <h2>3) IPsec, SSL, TLS</h2>
 
-  <table style="width:100%; border-collapse: collapse; margin-top: 1rem; font-size: 1rem;">
-    <thead style="background-color: #0077cc; color: white;">
-      <tr>
-        <th style="border: 1px solid #ddd; padding: 10px; text-align: left;">Protocol</th>
-        <th style="border: 1px solid #ddd; padding: 10px; text-align: left;">Description</th>
-      </tr>
-    </thead>
-    <tbody>
-  <tr>
-    <td data-label="Protocol" style="border: 1px solid #ddd; padding: 10px; font-weight: bold;">IPsec</td>
-    <td data-label="Description" style="border: 1px solid #ddd; padding: 10px;">
-      <ul>
-        <li>IPsec stands for Internet Protocol Security</li>
-        <li>IPsec is in the Network Layer (Layer-3)</li>
-        <li>IPsec is very complex</li>
-        <li>IPsec may cause overhead</li>
-        <li>IPsec works with IP Protocols</li>
-        <li>IPsec uses X.509 certificate</li>
-      </ul>
-    </td>
-  </tr>
+  <!-- Added responsive wrapper so the table remains readable on small screens. -->
+  <div class="table-responsive">
+    <table aria-describedby="ipsec-ssl-tls-desc">
+      <thead>
+        <tr>
+          <th scope="col">Protocol</th>
+          <th scope="col">Description</th>
+        </tr>
+      </thead>
+      <tbody>
+    <tr>
+      <td data-label="Protocol" style="font-weight: bold;">IPsec</td>
+      <td data-label="Description">
+        <ul>
+          <li>IPsec stands for Internet Protocol Security</li>
+          <li>IPsec is in the Network Layer (Layer-3)</li>
+          <li>IPsec is very complex</li>
+          <li>IPsec may cause overhead</li>
+          <li>IPsec works with IP Protocols</li>
+          <li>IPsec uses X.509 certificate</li>
+        </ul>
+      </td>
+    </tr>
 
-  <tr style="background-color: #f9f9f9;">
-    <td data-label="Protocol" style="border: 1px solid #ddd; padding: 10px; font-weight: bold;">SSL</td>
-    <td data-label="Description" style="border: 1px solid #ddd; padding: 10px;">
-      <ul>
-        <li>SSL stands for Secure Socket Layer</li>
-        <li>SSL lies between the Transport Layer (Layer-4) and the Application Layer (Layer-1)</li>
-        <li>SSL is very simple</li>
-        <li>SSL has lower overhead</li>
-        <li>SSL works with TCP Protocols</li>
-        <li>SSL uses X.509 certificate, where the client side is optional</li>
-      </ul>
-    </td>
-  </tr>
+    <tr>
+      <td data-label="Protocol" style="font-weight: bold;">SSL</td>
+      <td data-label="Description">
+        <ul>
+          <li>SSL stands for Secure Socket Layer</li>
+          <li>SSL lies between the Transport Layer (Layer-4) and the Application Layer (Layer-1)</li>
+          <li>SSL is very simple</li>
+          <li>SSL has lower overhead</li>
+          <li>SSL works with TCP Protocols</li>
+          <li>SSL uses X.509 certificate, where the client side is optional</li>
+        </ul>
+      </td>
+    </tr>
 
-  <tr>
-    <td data-label="Protocol" style="border: 1px solid #ddd; padding: 10px; font-weight: bold;">TLS</td>
-    <td data-label="Description" style="border: 1px solid #ddd; padding: 10px;">
-      <ul>
-        <li>TLS stands for Transport Layer Security</li>
-        <li>TLS is in the Transport Layer (Layer-4)</li>
-        <li>TLS is very simple</li>
-        <li>TLS has lower overhead</li>
-        <li>TLS works only with TCP Protocols</li>
-        <li>TLS uses X.509 certificate, where the client side is optional</li>
-      </ul>
-    </td>
-  </tr>
-</tbody>
-  </table>
-<img src="WhatsApp Image 2025-11-11 at 17.01.26_d2cd5f14.jpg"/>
+    <tr>
+      <td data-label="Protocol" style="font-weight: bold;">TLS</td>
+      <td data-label="Description">
+        <ul>
+          <li>TLS stands for Transport Layer Security</li>
+          <li>TLS is in the Transport Layer (Layer-4)</li>
+          <li>TLS is very simple</li>
+          <li>TLS has lower overhead</li>
+          <li>TLS works only with TCP Protocols</li>
+          <li>TLS uses X.509 certificate, where the client side is optional</li>
+        </ul>
+      </td>
+    </tr>
+  </tbody>
+    </table>
+  </div>
+  <img src="WhatsApp Image 2025-11-11 at 17.01.26_d2cd5f14.jpg" alt="IPsec TLS diagram"/>
 </div>
 
   <header>
@@ -359,7 +378,7 @@
 
 <div class="container">
   <h2>4) Architecture of IPsec:</h2>
-<img src="11111.jpg"/>
+<img src="11111.jpg" alt="IPsec architecture"/>
   <p>IPsec uses two protocols. They are:</p>
   <ul>
     <li>a) ESP Protocol</li>
@@ -423,7 +442,7 @@
   <ul>
     <li>SSL/TLS uses the TCP Protocol, which provides connection-oriented services</li>
     <li>WTLS uses the UDP Protocol, which provides connectionless services</li>
-    <img src="WhatsApp Image 2025-11-11 at 17.34.17_027c3e86.jpg"/>
+    <img src="WhatsApp Image 2025-11-11 at 17.34.17_027c3e86.jpg" alt="WTLS diagram"/>
   </ul>
 
   <h3>Operations of WTLS:</h3>
@@ -476,7 +495,7 @@
     <li>Presentation Layer</li>
     <li>Application Layer</li>
   </ul>
-    <img src="OSI-vs-TCP-vs-Hybrid-2.webp"/>
+    <img src="OSI-vs-TCP-vs-Hybrid-2.webp" alt="OSI vs TCP"/>
 
   <h3>i) Physical Layer:</h3>
   <ul>
@@ -536,7 +555,7 @@
         <li>b) Media Access Control (MAC)</li>
       </ul>
     </li>
-    <img src="0ULQ3cAMiVcTcpUpTVa6vA_b.webp"/>
+    <img src="0ULQ3cAMiVcTcpUpTVa6vA_b.webp" alt="Data Link Layer"/>
   </ul>
 
   <h3>a) Logical Link Control (LLC):</h3>
@@ -624,6 +643,8 @@
     <li>ii) Connectionless Service</li>
   </ul>
 
+  <!-- Wrapped table in the same responsive wrapper -->
+  <div class="table-responsive">
   <table>
     <thead>
       <tr>
@@ -670,10 +691,11 @@
   </tr>
 </tbody>
   </table>
+  </div>
 </div>
 <div class="container">
   <h2>9)Cryptographic Framework:</h2>
-<img src="WhatsApp Image 2025-11-11 at 18.38.14_1c322e81.jpg"/>
+<img src="WhatsApp Image 2025-11-11 at 18.38.14_1c322e81.jpg" alt="Cryptographic framework"/>
   <h3>i) Authentication:</h3>
   <ul>
     <li>The Process of verifying the identity of user or device is called as Authentication</li>
@@ -758,7 +780,7 @@
     <ul>
       <li>Manager sharing his presentation to all his employees</li>
     </ul>
-    <img src="unicast-multicast-broadcast_thumbnail.webp"/>
+    <img src="unicast-multicast-broadcast_thumbnail.webp" alt="unicast multicast"/>
   </ul>
 </div>
 
@@ -768,10 +790,4 @@
 
 </html>
 
-
-
-
-</body>
-
-</html>
 
